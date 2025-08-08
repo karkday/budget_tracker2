@@ -121,7 +121,11 @@ class _HomePageState extends State<HomePage> {
         onTap: (index) {
           switch (index) {
             case 1:
-              Navigator.pushNamed(context, '/transactions', arguments: { 'userId': userId});
+              Navigator.pushNamed(
+                context,
+                '/transactions',
+                arguments: {'userId': userId},
+              );
               break;
             case 2:
               Navigator.pushNamed(context, '/profile', arguments: userId);

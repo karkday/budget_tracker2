@@ -6,6 +6,7 @@ import 'screens/home_screen.dart';
 import 'screens/add_income_screen.dart';
 import 'screens/transaction_screen.dart';
 import 'screens/profile_screen.dart';
+import 'screens/tips_screen.dart';
 import 'dart:io';
 
 void main() {
@@ -47,8 +48,6 @@ class MyApp extends StatelessWidget {
               arguments: {
                 'userId': args['userId'],
                 'username': args['username'], // Pass username here
-                'totalIncome': (args['totalIncome'] as num).toDouble(),
-                'totalExpenses': (args['totalExpenses'] as num).toDouble(),
               },
             ),
           );
@@ -82,13 +81,12 @@ class MyApp extends StatelessWidget {
 
         return null; // For any unknown route
       },
-
-      // Keep simple routes here
       routes: {
         '/': (context) => const LoginScreen(),
-        '/transactions': (context) => const TransactionsScreen(),
         '/add_income': (context) => const AddIncomeScreen(),
         '/add_expense': (context) => const AddExpenseScreen(),
+        '/transactions': (context) => const TransactionsScreen(),
+        '/tips': (context) => const TipsAndTricksScreen(),
       },
     );
   }

@@ -33,7 +33,6 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        print('Transactions count: ${transactions.length}');
 
         if (data['status'] == 'success') {
           setState(() {
