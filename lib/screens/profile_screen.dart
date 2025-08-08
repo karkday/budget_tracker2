@@ -62,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            Text('Username: $username', style: const TextStyle(fontSize: 20)),
+            Text(' $username', style: const TextStyle(fontSize: 20)),
             const SizedBox(height: 40),
             ElevatedButton.icon(
               onPressed: _logout,

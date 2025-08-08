@@ -82,8 +82,6 @@ class MyApp extends StatelessWidget {
 
         return null; // For any unknown route
       },
-
-      // Keep simple routes here
       routes: {
         '/': (context) => const LoginScreen(),
         '/transactions': (context) => const TransactionsScreen(),
