@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
   double totalExpenses = 0.0;
   bool isLoading = true;
   String errorMessage = '';
+  int _currentIndex = 0;
 
   @override
   void didChangeDependencies() {
@@ -117,9 +118,18 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
+        backgroundColor: Colors.teal,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Colors.white,
+        currentIndex: _currentIndex, // <-- use state
         onTap: (index) {
+          setState(() {
+            _currentIndex = index; // <-- update state
+          });
           switch (index) {
+            case 0:
+              // Already on home, do nothing or you can refresh
+              break;
             case 1:
               Navigator.pushNamed(
                 context,
@@ -130,6 +140,9 @@ class _HomePageState extends State<HomePage> {
             case 2:
               Navigator.pushNamed(context, '/profile', arguments: userId);
               break;
+            case 3:
+              Navigator.pushNamed(context, '/tips');
+              break;
           }
         },
         items: const [
@@ -139,6 +152,10 @@ class _HomePageState extends State<HomePage> {
             label: 'Transactions',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.lightbulb),
+            label: 'Tips & Tricks',
+          ),
         ],
       ),
     );
