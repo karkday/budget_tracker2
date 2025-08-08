@@ -80,8 +80,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
         if (data['success'] == true) {
           final user = data['user'];
-          final totalIncome = (data['total_income'] as num).toDouble();
-          final totalExpense = (data['total_expense'] as num).toDouble();
 
           Navigator.pushReplacementNamed(
             context,
@@ -89,8 +87,6 @@ class _LoginScreenState extends State<LoginScreen> {
             arguments: {
               'userId': user['id'],
               'username': user['username'],
-              'totalIncome': totalIncome,
-              'totalExpenses': totalExpense,
             },
           );
         } else {

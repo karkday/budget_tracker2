@@ -47,8 +47,6 @@ class MyApp extends StatelessWidget {
               arguments: {
                 'userId': args['userId'],
                 'username': args['username'], // Pass username here
-                'totalIncome': (args['totalIncome'] as num).toDouble(),
-                'totalExpenses': (args['totalExpenses'] as num).toDouble(),
               },
             ),
           );
@@ -84,7 +82,6 @@ class MyApp extends StatelessWidget {
       },
       routes: {
         '/': (context) => const LoginScreen(),
-        '/transactions': (context) => const TransactionsScreen(),
         '/add_income': (context) => const AddIncomeScreen(),
         '/add_expense': (context) => const AddExpenseScreen(),
       },
